@@ -13,6 +13,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
+import logo from "../assets/auto-logo.png";
 
 const pages = [
   { page: "Chi Siamo", url: "#about" },
@@ -64,8 +65,7 @@ function Navbar(props) {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1, color }} />
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="a"
@@ -73,15 +73,15 @@ function Navbar(props) {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: "Montserrat, sans-serif",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".1rem",
               color,
               textDecoration: "none",
             }}
           >
-            LOGO
-          </Typography>
+            AUTO.FREEBUYS
+          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -124,24 +124,35 @@ function Navbar(props) {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1, color }} />
+          <img
+            src={logo}
+            style={{
+              width: 50,
+              height: 50,
+              m: 3,
+              display: { xs: "flex", md: "none" },
+              boxShadow: "3px 5px 10px #444444",
+              borderRadius: "50%",
+            }}
+          />
           <Typography
             variant="h5"
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
             sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
+              ml: 1,
+              display: "flex",
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily: "Montserrat, sans-serif",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".1rem",
               color,
               textDecoration: "none",
+              fontSize: { xs: 16, md: 20 },
             }}
           >
-            LOGO
+            AUTO.FREEBUYS
           </Typography>
 
           <Box sx={{ display: { xs: "none", md: "flex" }, marginLeft: "auto" }}>
