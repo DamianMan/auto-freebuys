@@ -1,8 +1,17 @@
 import React from "react";
-import { styled, Box, Pagination, Stack, Typography } from "@mui/material";
+import {
+  styled,
+  Box,
+  Pagination,
+  Stack,
+  Typography,
+  Grow,
+} from "@mui/material";
 import CarCard from "./CarCard";
 import Grid from "@mui/material/Grid2";
 import { useState } from "react";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Container = styled(Box)(({ theme }) => ({
   margin: 20,
@@ -13,6 +22,8 @@ const Container = styled(Box)(({ theme }) => ({
 }));
 
 function ShowroomContainer({ cars }) {
+  const container = useRef(null);
+  const isInView = useInView(container, { once: true });
   const [page, setPage] = useState(1);
   const itemsPerPage = 4; // Number of cars per page
 
@@ -29,38 +40,43 @@ function ShowroomContainer({ cars }) {
     }
   };
   return (
-    <Container>
-      <Typography
-        variant="body1"
-        fontFamily={"Montserrat, sans-serif"}
-        color="#EDEDED"
-        sx={{
-          fontWeight: "light",
-          padding: "0 20px",
-          marginBottom: 10,
-          width: { md: "50%" },
-        }}
-      >
-        In questo angolo raffinato dedicato alle auto, la nostra selezione,
-        sebbene contenuta, è solo un assaggio delle infinite possibilità che
-        possiamo offrirvi.
-        <br /> Invitiamo tutti gli amanti delle auto a esplorare il nostro
-        assortimento curato, ma sappiate che il vero viaggio inizia quando ci
-        contattate.
-      </Typography>
+    <Container ref={container}>
+      <Grow ref={container} in={isInView} timeout={2000}>
+        <Typography
+          variant="body1"
+          fontFamily={"Montserrat, sans-serif"}
+          color="#EDEDED"
+          sx={{
+            fontWeight: "light",
+            padding: "0 20px",
+            marginBottom: 10,
+            width: { md: "50%" },
+          }}
+        >
+          In questo angolo raffinato dedicato alle auto, la nostra selezione,
+          sebbene contenuta, è solo un assaggio delle infinite possibilità che
+          possiamo offrirvi.
+          <br /> Invitiamo tutti gli amanti delle auto a esplorare il nostro
+          assortimento curato, ma sappiate che il vero viaggio inizia quando ci
+          contattate.
+        </Typography>
+      </Grow>
+
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={1}>
           {currentCars.map((car) => (
-            <Grid
-              size={{ xs: 12, md: 6 }}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <CarCard car={car} />
-            </Grid>
+            <Grow ref={container} in={isInView} timeout={4000}>
+              <Grid
+                size={{ xs: 12, md: 6 }}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <CarCard car={car} />
+              </Grid>
+            </Grow>
           ))}
         </Grid>
         <Stack spacing={2} sx={{ marginTop: 5 }}>
