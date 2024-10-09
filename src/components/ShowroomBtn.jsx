@@ -38,7 +38,11 @@ function ShowroomBtn(props) {
   const isInView = useInView(ref, { once: true });
   return (
     <Fade timeout={5000} ref={ref} in={isInView}>
-      <ShowBtn variant="contained" startIcon={<SpeedIcon fontSize="large" />}>
+      <ShowBtn
+        href="#showroom"
+        variant="contained"
+        startIcon={<SpeedIcon fontSize="large" />}
+      >
         Showroom
       </ShowBtn>
     </Fade>
