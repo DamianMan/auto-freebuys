@@ -13,13 +13,16 @@ const ColumnGrid = styled(Grid)(({ theme }) => ({
 
 const TextCompany = styled(Typography)(({ theme }) => ({
   fontFamily: "Montserrat,sans-serif",
-  color: "#444444",
+  color: "rgb(68, 68, 68, 0.5)",
 }));
 
 const TextLink = styled(Link)(({ theme }) => ({
   fontFamily: "Montserrat,sans-serif",
   textDecoration: "none",
-  color: "#444444",
+  color: "rgb(68, 68, 68, 0.5)",
+  "&:hover": {
+    color: "#444444",
+  },
 }));
 
 function Footer(props) {
