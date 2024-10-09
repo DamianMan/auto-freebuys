@@ -1,12 +1,11 @@
 import React from "react";
-import { styled, Box, Pagination, Stack } from "@mui/material";
+import { styled, Box, Pagination, Stack, Typography } from "@mui/material";
 import CarCard from "./CarCard";
 import Grid from "@mui/material/Grid2";
 import { useState } from "react";
 
 const Container = styled(Box)(({ theme }) => ({
   margin: 20,
-  zIndex: 10,
 
   [theme.breakpoints.up("sm")]: {
     margin: 30,
@@ -31,6 +30,24 @@ function ShowroomContainer({ cars }) {
   };
   return (
     <Container>
+      <Typography
+        variant="body1"
+        fontFamily={"Montserrat, sans-serif"}
+        color="#EDEDED"
+        sx={{
+          fontWeight: "light",
+          padding: "0 20px",
+          marginBottom: 10,
+          width: { md: "50%" },
+        }}
+      >
+        In questo angolo raffinato dedicato alle auto, la nostra selezione,
+        sebbene contenuta, è solo un assaggio delle infinite possibilità che
+        possiamo offrirvi.
+        <br /> Invitiamo tutti gli amanti delle auto a esplorare il nostro
+        assortimento curato, ma sappiate che il vero viaggio inizia quando ci
+        contattate.
+      </Typography>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={1}>
           {currentCars.map((car) => (

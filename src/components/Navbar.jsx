@@ -114,11 +114,18 @@ function Navbar(props) {
               {pages.map((item) => (
                 <MenuItem key={item.page} onClick={handleCloseNavMenu}>
                   {item.page !== "Telefono" ? (
-                    <Typography sx={{ textAlign: "center" }}>
+                    <Button
+                      href={item.url}
+                      sx={{ textAlign: "center", color: "#444444" }}
+                    >
                       {item.page}
-                    </Typography>
+                    </Button>
                   ) : (
-                    <PhoneIcon />
+                    <Button
+                      href={item.url}
+                      startIcon={<PhoneIcon />}
+                      sx={{ textAlign: "center", color: "#444444" }}
+                    ></Button>
                   )}
                 </MenuItem>
               ))}

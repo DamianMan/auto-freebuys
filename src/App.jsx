@@ -7,9 +7,11 @@ import HomeIntro from "./components/HomeIntro";
 import AboutContainer from "./components/AboutContainer";
 import NavigationBreadcrumb from "./components/NavigationBreadcrumb";
 import aboutBg from "./assets/about-bg.png";
-import showroomBg from "./assets/showroom-bg.png";
+import contactUsBg from "./assets/contactUs-bg.png";
 import cars from "./assets/carsData/cars";
 import ShowroomContainer from "./components/ShowroomContainer";
+import ContactUsContainer from "./components/ContactUsContainer";
+import Footer from "./components/Footer";
 
 const Main = styled(Box)(({ theme }) => ({
   height: "100vh",
@@ -51,6 +53,20 @@ const ShohwRoom = styled(Box)(({ theme }) => ({
     paddingTop: 35,
   },
 }));
+const ContactUs = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
+  flexDirection: "column",
+  backgroundImage: `url(${contactUsBg})`,
+  backgroundSize: "contain",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "bottom", // set position to bottom for mobile
+
+  [theme.breakpoints.up("sm")]: {
+    paddingTop: 35,
+  },
+}));
 
 const Blank = styled(Box)(({ theme }) => ({
   height: 100,
@@ -76,6 +92,13 @@ function App() {
         <NavigationBreadcrumb name="SHOWROOM" />
         <ShowroomContainer cars={cars} />
       </ShohwRoom>
+      <Blank />
+      <ContactUs id="contactUs">
+        <NavigationBreadcrumb name="CONTACT US" />
+        <ContactUsContainer />
+      </ContactUs>
+      <Blank />
+      <Footer />
     </>
   );
 }

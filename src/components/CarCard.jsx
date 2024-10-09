@@ -28,13 +28,16 @@ function CarCard({ car }) {
     <Card
       sx={{
         width: { xs: "80vw", md: "45vw" },
-        boxShadow: "10px 5px 25px #DEDEDE",
+        boxShadow: "10px 10px 15px rgb(237, 237, 237, 0.5)",
         marginBottom: 3,
-        margin: "20px 3px",
+        margin: "20px 0px",
       }}
     >
       <CardHeader
-        sx={{ fontFamily: "Montserrat, sans-serif" }}
+        sx={{
+          fontFamily: "Montserrat, sans-serif",
+          background: "rgb(68, 68, 68, 0.1)",
+        }}
         title={`${car.make} ${car.model}`}
         subheader={`Anno - ${car.year}`}
       />
