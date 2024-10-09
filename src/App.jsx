@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { styled, Box, Typography } from "@mui/material";
-import HomeBackground from "./components/HomeBAckground";
+import HomeBackground from "./components/HomeBackground";
 import ShowroomBtn from "./components/ShowroomBtn";
 import HomeIntro from "./components/HomeIntro";
 import AboutContainer from "./components/AboutContainer";
