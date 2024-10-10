@@ -14,6 +14,7 @@ const ColumnGrid = styled(Grid)(({ theme }) => ({
 const TextCompany = styled(Typography)(({ theme }) => ({
   fontFamily: "Montserrat,sans-serif",
   color: "rgb(68, 68, 68, 0.5)",
+  textAlign: "left",
 }));
 
 const TextLink = styled(Link)(({ theme }) => ({
@@ -30,12 +31,17 @@ function Footer(props) {
     <>
       <Box sx={{ background: "rgb(68, 68, 68, 0.1)", padding: "20px 0" }}>
         <Grid container spacing={3}>
-          <ColumnGrid size={{ xs: 12, md: 4 }} sx={{ placeItems: "start" }}>
+          <ColumnGrid
+            size={{ xs: 12, md: 4 }}
+            sx={{ placeItems: { xs: "start", md: "center" } }}
+          >
             <Box
               sx={{
                 display: "flex",
 
                 mb: 1,
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
               }}
             >
               <Typography
@@ -44,12 +50,12 @@ function Footer(props) {
                 component="a"
                 sx={{
                   display: "flex",
-                  flexGrow: 1,
                   fontFamily: "Montserrat, sans-serif",
                   fontWeight: 700,
                   letterSpacing: ".1rem",
                   color: "#DA0037",
                   textDecoration: "none",
+                  mr: 3,
                   fontSize: { xs: 16, md: 20 },
                 }}
               >
@@ -57,28 +63,66 @@ function Footer(props) {
               </Typography>
             </Box>
 
-            <TextCompany>via G.Cobellis, 16</TextCompany>
-            <TextCompany>Vallo della Lucania, Salerno</TextCompany>
-            <TextCompany>P.IVA IT483072380234</TextCompany>
-            <TextCompany>+39 328 5867405</TextCompany>
-            <TextCompany>auto.freebuys@info.it</TextCompany>
-          </ColumnGrid>
-          <ColumnGrid size={{ xs: 12, md: 4 }} sx={{ placeItems: "start" }}>
-            <TextCompany sx={{ fontWeight: "bold", color: "#DA0037" }}>
-              LINK
-            </TextCompany>
+            <Box
+              sx={{
+                display: "flex",
 
-            <TextLink href={"#about"}>Chi Siamo</TextLink>
-            <TextLink href={"#showroom"}>Esplora</TextLink>
-            <TextLink href={"#contactUs"}>Contattaci</TextLink>
+                mb: 1,
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                flexDirection: "column",
+              }}
+            >
+              <TextCompany>via G.Cobellis, 16</TextCompany>
+              <TextCompany>Vallo della Lucania, Salerno</TextCompany>
+              <TextCompany>P.IVA IT483072380234</TextCompany>
+              <TextCompany>+39 328 5867405</TextCompany>
+              <TextCompany>auto.freebuys@info.it</TextCompany>
+            </Box>
           </ColumnGrid>
-          <ColumnGrid size={{ xs: 12, md: 4 }}>
-            <TextCompany sx={{ fontWeight: "bold", color: "#DA0037" }}>
-              POLICY
-            </TextCompany>
+          <ColumnGrid
+            size={{ xs: 12, md: 4 }}
+            sx={{ placeItems: { xs: "start", md: "center" } }}
+          >
+            <Box
+              sx={{
+                display: "flex",
 
-            <TextLink href={"#showroom"}>Privacy Policy</TextLink>
-            <TextLink href={"#contactUs"}>Cookies Policy</TextLink>
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                flexDirection: "column",
+              }}
+            >
+              <TextCompany sx={{ fontWeight: "bold", color: "#DA0037" }}>
+                LINK
+              </TextCompany>
+
+              <TextLink href={"#about"}>Chi Siamo</TextLink>
+              <TextLink href={"#showroom"}>Esplora</TextLink>
+              <TextLink href={"#contactUs"}>Contattaci</TextLink>
+            </Box>
+          </ColumnGrid>
+          <ColumnGrid
+            size={{ xs: 12, md: 4 }}
+            sx={{ placeItems: { xs: "start", md: "center" } }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+
+                mb: 1,
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                flexDirection: "column",
+              }}
+            >
+              <TextCompany sx={{ fontWeight: "bold", color: "#DA0037" }}>
+                POLICY
+              </TextCompany>
+
+              <TextLink href={"#showroom"}>Privacy Policy</TextLink>
+              <TextLink href={"#contactUs"}>Cookies Policy</TextLink>
+            </Box>
           </ColumnGrid>
         </Grid>
       </Box>
