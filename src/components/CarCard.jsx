@@ -36,14 +36,22 @@ function CarCard({ car }) {
       <CardHeader
         sx={{
           fontFamily: "Montserrat, sans-serif",
-          background: "rgb(68, 68, 68, 0.1)",
+          background: "#444444",
+          boxShadow: "3px 5px 10px #000",
+          color: "#EDEDED",
         }}
         title={`${car.make} ${car.model}`}
         subheader={`Anno - ${car.year}`}
+        subheaderTypographyProps={{
+          sx: { color: "grey" }, // Change this to the color you want for the subheader
+        }}
       />
       <CardMedia
         component="img"
-        image="https://images.unsplash.com/photo-1510903117032-f1596c327647?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhciUyMGJtd3xlbnwwfHwwfHx8MA%3D%3D"
+        image={
+          car.image ||
+          "https://images.unsplash.com/photo-1510903117032-f1596c327647?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhciUyMGJtd3xlbnwwfHwwfHx8MA%3D%3D"
+        }
         alt={`${car.make} ${car.model}`}
       />
       <CardContent>
