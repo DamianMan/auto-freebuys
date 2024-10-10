@@ -29,8 +29,9 @@ function CarCard({ car }) {
       sx={{
         width: { xs: "80vw", md: "45vw" },
         boxShadow: "10px 10px 15px rgb(237, 237, 237, 0.5)",
-        marginBottom: 3,
+        marginBottom: 4,
         margin: "20px 0px",
+        borderRadius: "16px",
       }}
     >
       <CardHeader
@@ -39,6 +40,7 @@ function CarCard({ car }) {
           background: "#444444",
           boxShadow: "3px 5px 10px #000",
           color: "#EDEDED",
+          marginTop: 1,
         }}
         title={`${car.make} ${car.model}`}
         subheader={`Anno - ${car.year}`}
@@ -53,7 +55,12 @@ function CarCard({ car }) {
           "https://images.unsplash.com/photo-1510903117032-f1596c327647?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhciUyMGJtd3xlbnwwfHwwfHx8MA%3D%3D"
         }
         alt={`${car.make} ${car.model}`}
-        sx={{ objectFit: "cover", height: { xs: 250, md: 400 }, width: "100%" }}
+        sx={{
+          objectFit: { xs: "contain", md: "cover" },
+          height: { xs: "auto", md: 400 },
+          width: "100%",
+          marginTop: 2,
+        }}
       />
       <CardContent>
         <Text variant="body2" sx={{ color: "#444444", fontWeight: "bold" }}>
