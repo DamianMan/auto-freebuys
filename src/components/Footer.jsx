@@ -55,7 +55,7 @@ function Footer(props) {
                   letterSpacing: ".1rem",
                   color: "#DA0037",
                   textDecoration: "none",
-                  mr: 3,
+                  mr: 11,
                   fontSize: { xs: 16, md: 20 },
                 }}
               >
@@ -73,11 +73,13 @@ function Footer(props) {
                 flexDirection: "column",
               }}
             >
+              <TextCompany>Manzillo Rosario</TextCompany>
               <TextCompany>via G.Cobellis, 16</TextCompany>
               <TextCompany>Vallo della Lucania, Salerno</TextCompany>
-              <TextCompany>P.IVA IT483072380234</TextCompany>
-              <TextCompany>+39 328 5867405</TextCompany>
-              <TextCompany>auto.freebuys@info.it</TextCompany>
+              <TextCompany>P.Iva IT01836970655</TextCompany>
+              <TextCompany>CCIIAA Numero REA SA - 195991</TextCompany>
+              <TextCompany>+39 0974 1926094 | +39 3285867405</TextCompany>
+              <TextCompany>autofreebuys.web@gmail.com</TextCompany>
             </Box>
           </ColumnGrid>
           <ColumnGrid
@@ -120,8 +122,18 @@ function Footer(props) {
                 POLICY
               </TextCompany>
 
-              <TextLink href={"#showroom"}>Privacy Policy</TextLink>
-              <TextLink href={"#contactUs"}>Cookies Policy</TextLink>
+              <TextLink
+                href={"https://www.iubenda.com/privacy-policy/99746964"}
+              >
+                Privacy Policy
+              </TextLink>
+              <TextLink
+                href={
+                  "https://www.iubenda.com/privacy-policy/99746964/cookie-policy"
+                }
+              >
+                Cookies Policy
+              </TextLink>
             </Box>
           </ColumnGrid>
         </Grid>

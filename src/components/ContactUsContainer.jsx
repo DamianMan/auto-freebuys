@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, styled, Box, Button, Grow } from "@mui/material";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import SendIcon from "@mui/icons-material/Send";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -55,11 +55,11 @@ function ContactUsContainer(props) {
               margin: "20px 0",
               fontFamily: "Montserrat, sans-serif",
             }}
-            endIcon={<AlternateEmailIcon />}
+            endIcon={<SendIcon />}
             elevation={6}
-            href="mailto:auto.freebuys.it@info.it"
+            href="mailto:autofreebuys.web@gmail.com"
           >
-            auto.freebuys.it@info.it
+            autofreebuys.web@gmail.com
           </Button>
           <Button
             variant="contained"
