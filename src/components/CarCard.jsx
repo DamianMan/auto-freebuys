@@ -53,6 +53,7 @@ function CarCard({ car }) {
           "https://images.unsplash.com/photo-1510903117032-f1596c327647?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNhciUyMGJtd3xlbnwwfHwwfHx8MA%3D%3D"
         }
         alt={`${car.make} ${car.model}`}
+        sx={{ objectFit: "cover", height: { xs: 250, md: 400 }, width: "100%" }}
       />
       <CardContent>
         <Text variant="body2" sx={{ color: "#444444", fontWeight: "bold" }}>
